@@ -15,7 +15,7 @@ class ActivityMessage : AppCompatActivity() {
         var miBundle: Bundle? = this.intent.extras
 
         if(miBundle != null){
-            findleMessage.text="Hola ${miBundle.getString("Nombre")} Bienvenido"
+            findleMessage.text="El alumno sus nota fueron y el promedio fue de ${miBundle.getDouble("promedioNotas")}"
         }
         val btnExit:Button = findViewById(R.id.txtSalir)
         btnExit.setOnClickListener{onClick()}
