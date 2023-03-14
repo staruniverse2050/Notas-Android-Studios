@@ -172,7 +172,7 @@
 
         />
 
-    <TextView
+    <EditText
         android:id="@+id/txtResult"
         android:layout_width="0dp"
         android:layout_height="14dp"

@@ -15,7 +15,8 @@ class ActivityMessage : AppCompatActivity() {
         var miBundle: Bundle? = this.intent.extras
 
         if(miBundle != null){
-            findleMessage.text="El alumno sus nota fueron y el promedio fue de ${miBundle.getDouble("promedioNotas")}"
+            findleMessage.text="Alumno: ${miBundle.getString("nombreAprendiz")} \nMateria: ${miBundle.getString("nombreMateria")} \nSus notas: \nNota 1:  ${miBundle.getDouble("nota1")} \nNota 2: ${miBundle.getDouble("nota2")} \nNota 3:  ${miBundle.getDouble("nota3")} \nPromedio: ${miBundle.getDouble("promedioNotas")}"
+
         }
         val btnExit:Button = findViewById(R.id.txtSalir)
         btnExit.setOnClickListener{onClick()}
