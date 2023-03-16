@@ -40,10 +40,20 @@ class MainActivity : AppCompatActivity() {
         val average:Double = truncate((note1 + note2 + note3) / 3)
 
 
-        val message:String = if (average >= 3.5) {
-            "Aprobó"
+
+        var a:String?=null
+
+
+        if (average >= 3.5) {
+            a="Aprobado"
+
+
+
         } else {
-            "Reprobó"
+            a="Reprobado"
+
+
+
 
         }
 
@@ -55,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putDouble("nota1", note1)
         bundle.putDouble("nota2", note2)
         bundle.putDouble("nota3", note3)
-        bundle.putString("mensaje", message)
+        bundle.putString("mensaje",a)
 
         intent.putExtras(bundle)
         startActivity(intent)
