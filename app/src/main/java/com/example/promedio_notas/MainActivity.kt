@@ -1,6 +1,8 @@
 package com.example.promedio_notas
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import kotlin.math.truncate
 
@@ -27,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         val fieldNote3: EditText = findViewById(R.id.txtNota3)
         val name: EditText = findViewById(R.id.txtNombre)
         val subject: EditText = findViewById(R.id.txtSubject)
-        val aprobadoNoAprobado: TextView = findViewById(R.id.txtResult)
 
         val note1:Double = fieldNote1.text.toString().toDouble()
         val note2:Double = fieldNote2.text.toString().toDouble()
@@ -35,16 +37,16 @@ class MainActivity : AppCompatActivity() {
         val nameAprendiz:String = name.text.toString()
         val subjectAprendiz:String = subject.text.toString()
 
-
-
-
-
         val average:Double = truncate((note1 + note2 + note3) / 3)
-        if (average >= 3.5){
-            aprobadoNoAprobado.text = "Ha aprobado"
-        }else{
-            aprobadoNoAprobado.text = "No ha aprobado"
+
+
+        val message:String = if (average >= 3.5) {
+            "Aprobó"
+        } else {
+            "Reprobó"
+
         }
+
         val intent = Intent(this, ActivityMessage::class.java)
         val bundle: Bundle = Bundle()
         bundle.putString("nombreAprendiz", subjectAprendiz)
@@ -53,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putDouble("nota1", note1)
         bundle.putDouble("nota2", note2)
         bundle.putDouble("nota3", note3)
+        bundle.putString("mensaje", message)
 
         intent.putExtras(bundle)
         startActivity(intent)
