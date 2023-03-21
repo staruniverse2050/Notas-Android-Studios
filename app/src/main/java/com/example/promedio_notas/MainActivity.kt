@@ -37,37 +37,28 @@ class MainActivity : AppCompatActivity() {
         val nameAprendiz:String = name.text.toString()
         val subjectAprendiz:String = subject.text.toString()
 
-        val average:Double = truncate((note1 + note2 + note3) / 3)
+        val average: Double = (note1 + note2 + note3) / 3.0
+        val formattedAverage = String.format("%.2f", average)
 
-
-
-        var a:String?=null
-
+        var messageNote: String? = null
 
         if (average >= 3.5) {
-            a="Aprobado"
-
-
-
+            messageNote = "Aprobado"
         } else {
-            a="Reprobado"
-
-
-
-
+            messageNote = "Reprobado"
         }
 
         val intent = Intent(this, ActivityMessage::class.java)
-        val bundle: Bundle = Bundle()
-        bundle.putString("nombreAprendiz", subjectAprendiz)
-        bundle.putString("nombreMateria", nameAprendiz)
-        bundle.putDouble("promedioNotas", average)
-        bundle.putDouble("nota1", note1)
-        bundle.putDouble("nota2", note2)
-        bundle.putDouble("nota3", note3)
-        bundle.putString("mensaje",a)
+        val content: Bundle = Bundle()
+        content.putString("nombreAprendiz", subjectAprendiz)
+        content.putString("nombreMateria", nameAprendiz)
+        content.putString("promedioNotas", formattedAverage)
+        content.putDouble("nota1", note1)
+        content.putDouble("nota2", note2)
+        content.putDouble("nota3", note3)
+        content.putString("mensaje",messageNote)
 
-        intent.putExtras(bundle)
+        intent.putExtras(content)
         startActivity(intent)
     }
 }

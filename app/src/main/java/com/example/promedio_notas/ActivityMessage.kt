@@ -17,16 +17,16 @@ class ActivityMessage : AppCompatActivity() {
 
 
         if(miBundle != null){
-            findleMessage.text="Alumno: ${miBundle.getString("nombreAprendiz")} \nMateria: ${miBundle.getString("nombreMateria")} \nSus notas: \nNota 1:  ${miBundle.getDouble("nota1")} \nNota 2: ${miBundle.getDouble("nota2")} \nNota 3:  ${miBundle.getDouble("nota3")} \nPromedio: ${miBundle.getDouble("promedioNotas")} \nEl estado es: "
+            findleMessage.text="Alumno: ${miBundle.getString("nombreAprendiz")} \nMateria: ${miBundle.getString("nombreMateria")} \nSus notas: \nNota 1:  ${miBundle.getDouble("nota1")} \nNota 2: ${miBundle.getDouble("nota2")} \nNota 3:  ${miBundle.getDouble("nota3")} \nPromedio: ${miBundle.getString("promedioNotas")} \nEl estado es: "
 
         }
-        val estado=findViewById<TextView>(R.id.textView2)
-        if(miBundle?.getDouble("promedioNotas")!! >=3.5){
-            estado.text=" ${miBundle?.getString("mensaje")}"
-            estado.setTextColor(Color.GREEN)
+        val state=findViewById<TextView>(R.id.textView2)
+        if(miBundle?.getString("promedioNotas")!! >= 3.5.toString()){
+            state.text=" ${miBundle?.getString("mensaje")}"
+            state.setTextColor(Color.GREEN)
         }else{
-            estado.text=" ${miBundle?.getString("mensaje")}"
-            estado.setTextColor(Color.RED)
+            state.text=" ${miBundle?.getString("mensaje")}"
+            state.setTextColor(Color.RED)
 
         }
         val btnExit:Button = findViewById(R.id.txtSalir)
