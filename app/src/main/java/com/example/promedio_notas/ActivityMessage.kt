@@ -1,6 +1,7 @@
 package com.example.promedio_notas
 
 import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,10 +24,12 @@ class ActivityMessage : AppCompatActivity() {
         val state=findViewById<TextView>(R.id.textView2)
         if(miBundle?.getString("promedioNotas")!! >= 3.5.toString()){
             state.text=" ${miBundle?.getString("mensaje")}"
-            state.setTextColor(Color.GREEN)
+            state.setTextColor(Color.parseColor("#4CAF50"));
+            state.setTypeface(null, Typeface.BOLD);
         }else{
             state.text=" ${miBundle?.getString("mensaje")}"
-            state.setTextColor(Color.RED)
+            state.setTypeface(null, Typeface.BOLD);
+            state.setTextColor(Color.parseColor("#C62828"));
 
         }
         val btnExit:Button = findViewById(R.id.txtSalir)
