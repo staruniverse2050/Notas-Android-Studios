@@ -19,6 +19,7 @@
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:hint="Nombre de la materia"
         app:layout_constraintVertical_bias="0.307" />
 
     <TextView
@@ -38,6 +39,7 @@
         android:layout_width="58dp"
         android:layout_height="53dp"
         android:ems="10"
+        android:hint="Nota 3"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +65,7 @@
         android:layout_width="58dp"
         android:layout_height="53dp"
         android:ems="10"
+        android:hint="Nota 2"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,6 +110,7 @@
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:hint="Nombre alumno"
         app:layout_constraintVertical_bias="0.177" />
 
     <EditText
@@ -114,6 +118,7 @@
         android:layout_width="58dp"
         android:layout_height="53dp"
         android:ems="10"
+        android:hint="Nota 1"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
