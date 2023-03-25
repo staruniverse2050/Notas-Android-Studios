@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val nameAprendiz:String = name.text.toString()
         val subjectAprendiz:String = subject.text.toString()
 
-        val average: Double = (note1 + note2 + note3) / 3.0
+        val average: Double = (note1 + note2 + note3) / 3
         val formattedAverage = String.format("%.2f", average)
 
         var messageNote: String? = null
